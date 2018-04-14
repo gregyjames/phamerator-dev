@@ -435,7 +435,7 @@ def add_phage(record, c=None):
         print 'added phage %s' % Name
         return PhageID
       except:
-        print 'error inserting phage genome into phage table'
+        print 'error inserting phage genome into phage table: ', sys.exc_info()[0]
         c.execute("UNLOCK TABLES")
         return None
 
